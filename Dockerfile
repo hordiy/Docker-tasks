@@ -1,6 +1,8 @@
 FROM maven:3.6.0-jdk-8-slim
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y git
+RUN apt-get update && \
+	apt-get upgrade -y && \
+	apt-get install -y git
 
 ARG SSH_KEY
 ARG HOST
