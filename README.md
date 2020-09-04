@@ -1,19 +1,19 @@
 # Docker-Task
 
-**BUILD DOCKER FOR HTTPS**
+**BUILD DOCKER IMAGE FOR HTTPS**
 
 You should use the following commands to build the image
 
 `docker build -t hordiy/springboot-git . `
 
-**BUILD DOCKER FOR SSH**
+**BUILD DOCKER IMAGE FOR SSH**
 
 You have to write down your private ssh key name instead of `id_rsa`:  
 `MY_KEY=$(cat ~/.ssh/id_rsa`
 
 `docker build --build-arg SSH_KEY="$MY_KEY" --build-arg HOST=git.epam.com -t hordiy/springboot-git . `
 
-**RUN DOCKER FOR HTTPS**
+**RUN DOCKER IMAGE FOR HTTPS**
 
 The default variable for an artifact is `war`. if your project builds `jar`, `war` or etc. add this build option to the command
 
@@ -34,7 +34,7 @@ Thereafter, you can use this git link
 
 `docker run -d -i -p 8080:8080 hordiy/springboot-git https://<username>:<deploy_token>@git.epam.com/Vladyslav_Hordiienko/springboot.git`
 
-**RUN DOCKER FOR SSH**
+**RUN DOCKER IMAGE FOR SSH**
 
 If you've built docker for SSH
 
