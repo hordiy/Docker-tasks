@@ -13,7 +13,7 @@ You have to write down your private ssh key name instead of `id_rsa`:
 
 `docker build --build-arg SSH_KEY="$MY_KEY" --build-arg HOST=git.epam.com -t hordiy/springboot-git . `
 
-**RUN DOCKER IMAGE FOR HTTPS**
+**RUN DOCKER CONTAINER FOR HTTPS**
 
 The default variable for an artifact is `war`. if your project builds `jar`, `war` or etc. add this build option to the command
 
@@ -34,9 +34,9 @@ Thereafter, you can use this git link
 
 `docker run -d -i -p 8080:8080 hordiy/springboot-git https://<username>:<deploy_token>@git.epam.com/Vladyslav_Hordiienko/springboot.git`
 
-**RUN DOCKER IMAGE FOR SSH**
+**RUN DOCKER CONTAINER FOR SSH**
 
-If you've built docker for SSH
+If you've built docker image for SSH
 
 `docker run -d -i -p 8080:8080 hordiy/springboot-git git@git.epam.com:Vladyslav_Hordiienko/springboot.git`
 
