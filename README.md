@@ -15,7 +15,9 @@ You have to write down your private ssh key name instead of `id_rsa`:
 
 **RUN DOCKER FOR HTTPS**
 
-`docker run -d -i -p 8080:8080 hordiy/springboot-git https://git.epam.com/Vladyslav_Hordiienko/SpringBoot.git`
+The default variable for an artifact is `war`. if your project builds `jar`, `war` or etc. add this build option to the command
+
+`docker run -d -i -p 8080:8080 hordiy/springboot-git https://github.com/hordiy/SpringBoot.git jar`
 
 If you have private repository you can use the following ways
 
@@ -43,7 +45,7 @@ If you've built docker for SSH
 
 `docker exec -it {container_name} /bin/bash`
 
-`curl localhost:8080/greeting?name=Docker`
+`curl localhost:8080/greeting?name=Docker` or run in browser http://192.168.99.100:8080/greeting?name=Docker
 
 ```
 <!DOCTYPE HTML>
