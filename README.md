@@ -1,4 +1,4 @@
-# Docker-Task
+# Docker-Task 1
 
 **BUILD DOCKER IMAGE FOR HTTPS**
 
@@ -46,6 +46,50 @@ If you've built docker image for SSH
 `docker exec -it {container_name} /bin/bash`
 
 `curl localhost:8080/greeting?name=Docker` or run in browser http://192.168.99.100:8080/greeting?name=Docker
+
+```
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p >Hello, Docker!</p>
+</body>
+```
+# Docker-Task 2
+
+**BUILD DOCKER IMAGE**
+
+You should use the following commands to build the image
+
+`docker build -t hordiy/tomcat-run-war . `
+
+**RUN DOCKER CONTAINER**
+
+There are four options to start the container:
+ - build (Build current repository branch)
+ - build_deploy (Build and deploy current repository branch)
+ - deploy_volume (Deploy the last artifact from volume)
+ - deploy_branch "name of branch"(Deploy branch)
+
+ Example:
+
+`docker run -it -p 8080:8080 hordiy/tomcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git build`
+
+`docker run -it -p 8080:8080 hordiy/tomcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git build_deploy`
+
+`docker run -it -p 8080:8080 hordiy/tomcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git deploy_branch test-new-branch`
+
+`docker run -it -p 8080:8080 -v ~/"your_path"/docker-task/task-2/test_volume.war:/my_volume/demo.war hordiy/t
+omcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git deploy_volume`
+
+**RESULT**
+
+`docker exec -it {container_name} /bin/bash`
+
+`curl localhost:8080/demo/greeting?name=Docker` or run in browser http://192.168.99.100:8080/demo/greeting?name=Docker
 
 ```
 <!DOCTYPE HTML>
