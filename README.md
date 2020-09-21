@@ -82,8 +82,7 @@ There are four options to start the container:
 
 `docker run -it -p 8080:8080 hordiy/tomcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git deploy_branch test-new-branch`
 
-`docker run -it -p 8080:8080 -v ~/"your_path"/docker-task/task-2/test_volume.war:/my_volume/demo.war hordiy/t
-omcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git deploy_volume`
+`docker run -it -p 8080:8080 -v ~/"your_path"/docker-task/task-2/test_volume.war:/my_volume/demo.war hordiy/tomcat-run-war:1.0 https://github.com/hordiy/SpringBoot.git deploy_volume`
 
 **RESULT**
 
